@@ -5,10 +5,10 @@ resource "azurerm_network_security_group" "SRVJUMP01" {
 
   security_rule {
     name                       = "AllowInboundRDP"
-    priority                   = 100
+    priority                   = 150
     direction                  = "Inbound"
     access                     = "Allow"
-    protocol                   = "tcp"
+    protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "3389"
     source_address_prefix      = "*"

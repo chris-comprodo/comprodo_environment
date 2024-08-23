@@ -1,12 +1,22 @@
-### Environment variables for Comprodo
-variable "subscription" {
-    type = string
-    #default = ""
-}
+### Environment variables for Comprodo ###
+##########################################
 
 variable "tenant" {
     type = string
+    description = "Enter your Azure Tenant ID"
     #default = ""
+}
+
+variable "subscription" {
+    type = string
+    description = "Select your Azure Subscription"
+    #default = ""
+}
+
+variable "region" {
+    type = string
+    description = "Select you main region for this deployment"
+    default = "East US"
 }
 
 variable "defaultWinServerVMSize" {

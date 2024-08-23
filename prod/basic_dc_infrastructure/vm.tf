@@ -24,6 +24,10 @@ resource "azurerm_windows_virtual_machine" "SRVDC01" {
     sku       = "2022-Datacenter"
     version   = "latest"
   }
+
+  tags = {
+    Environment = "Prod"
+  }
 }
 
 resource "azurerm_network_interface" "SRVDC01" {

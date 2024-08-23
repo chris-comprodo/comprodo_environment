@@ -18,10 +18,16 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "RG-DomainNetwork" {
   name     = "RG-DomainNetwork"
-  location = "East US"
+  location = var.region
+   tags = {
+    Environment = "Prod"
+  }
 }
 
 resource "azurerm_resource_group" "RG-DomainController" {
   name     = "RG-DomainController"
-  location = "East US"
+  location = var.region
+   tags = {
+    Environment = "Prod"
+  }
 }

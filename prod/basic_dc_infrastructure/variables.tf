@@ -21,6 +21,6 @@ variable "region" {
 
 variable "defaultWinServerVMSize" {
     type = string
-    default = "Standard_D2sv3"
+    default = "Standard_D2s_v3"
     description = "Default size for all Windows Server VMs"
 }

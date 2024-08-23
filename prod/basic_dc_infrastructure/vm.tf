@@ -7,6 +7,7 @@ resource "azurerm_windows_virtual_machine" "SRVDC01" {
   size                = var.defaultWinServerVMSize
   hotpatching_enabled = false
   patch_mode          = "Manual"
+  enable_automatic_updates = false
   admin_username      = "adminuser"
   admin_password      = "My#Demo12345CT"
   network_interface_ids = [

@@ -19,24 +19,6 @@ variable "region" {
     default = "East US"
 }
 
-variable "defaultWinServerVMSize" {
-    type = string
-    default = "Standard_D2s_v3"
-    description = "Default size for all Windows Server VMs"
-}
-
-variable "win_username" {
-  description = "Windows node username"
-  type        = string
-  sensitive   = false
-}
-
-variable "win_userpass" {
-  description = "Windows node password"
-  type        = string
-  sensitive   = true
-}
-
 ### Microsoft AD DS variables for Comprodo ###
 ##########################################
 
@@ -57,6 +39,6 @@ variable "netbios_name" {
 variable "SafeModeAdministratorPassword" {
   description = "Password for AD Safe Mode recovery"
   type        = string
-  default     = "MyDisasterRecoveryAD"
+  default     = "My!DisasterRecovery27283AD"
   sensitive   = true
 }

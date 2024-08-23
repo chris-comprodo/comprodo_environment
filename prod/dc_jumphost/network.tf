@@ -11,14 +11,14 @@ resource "azurerm_subnet" "Jump01_01" {
   name                 = "SUBNET-Jump01_01"
   resource_group_name  = azurerm_resource_group.RG-JumpHosts.name
   virtual_network_name = azurerm_virtual_network.Jump01.name
-  address_prefixes     = ["10.0.10.0/28"]
+  address_prefixes     = ["10.0.20.0/28"]
 }
 
 resource "azurerm_subnet" "Jump01_02" {
   name                 = "SUBNET-Jump01_02"
   resource_group_name  = azurerm_resource_group.RG-JumpHosts.name
   virtual_network_name = azurerm_virtual_network.Jump01.name
-  address_prefixes     = ["10.0.10.16/28"]
+  address_prefixes     = ["10.0.20.16/28"]
 }
 
 resource "azurerm_public_ip" "SRVJUMP01" {

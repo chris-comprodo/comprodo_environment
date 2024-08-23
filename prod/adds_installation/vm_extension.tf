@@ -3,8 +3,7 @@
 
 resource "azurerm_virtual_machine_extension" "install_ad" {
   name                 = "install_ad"
-#  resource_group_name  = azurerm_resource_group.main.name
-  virtual_machine_id   = azurerm_windows_virtual_machine.SRVDC01.id
+  virtual_machine_id   = data.azurerm_virtual_machine.SRVDC01.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"

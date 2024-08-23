@@ -14,4 +14,15 @@ resource "azurerm_network_security_group" "SRVDC01" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
+   security_rule {
+    name                       = "Allow_Jump01_RDP"
+    priority                   = 90
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "tcp"
+    source_port_range          = "*"
+    destination_port_range     = "3389"
+    source_address_prefix      = "VirtualNetwork"
+    destination_address_prefix = "VirtualNetwork"
+  }
 }

@@ -1,4 +1,6 @@
-#Install Active Directory on the SRVDC01 VM
+# Install Active Directory on the SRVDC01 VM
+# Reference: https://techcommunity.microsoft.com/t5/itops-talk-blog/how-to-run-powershell-scripts-on-azure-vms-with-terraform/ba-p/3827573
+
 resource "azurerm_virtual_machine_extension" "install_ad" {
   name                 = "install_ad"
 #  resource_group_name  = azurerm_resource_group.main.name

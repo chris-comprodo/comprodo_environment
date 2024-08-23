@@ -11,7 +11,7 @@ resource "azurerm_windows_virtual_machine" "SRVJUMP01" {
   admin_username      = "adminuser"
   admin_password      = "My#Demo12345CT"
   network_interface_ids = [
-    azurerm_network_interface.SRVDC01.id,
+    azurerm_network_interface.SRVJUMP01.id,
   ]
 
   os_disk {
@@ -49,15 +49,16 @@ resource "azurerm_network_interface_security_group_association" "SRVJUMP01" {
   network_security_group_id = azurerm_network_security_group.SRVJUMP01.id
 }
 
-resource "azurerm_dev_test_global_vm_shutdown_schedule" "SRVJUMP01" {
-  virtual_machine_id = azurerm_windows_virtual_machine.SRVJUMP01.id
-  location = azurerm_resource_group.RG-JumpHosts.location
-  enabled = true
-  daily_recurrence_time = "1900"
-  timezone = "W. Europe Standard Time"
-  notification_settings {
-    enabled = true
-    email = "cthiemann@corp.comprodo.de"
-    time_in_minutes = "60"
-  }
-}
+
+# resource "azurerm_dev_test_global_vm_shutdown_schedule" "SRVJUMP01" {
+#  virtual_machine_id = azurerm_windows_virtual_machine.SRVJUMP01.id
+#  location = azurerm_resource_group.RG-JumpHosts.location
+#  enabled = true
+#  daily_recurrence_time = "1900"
+#  timezone = "W. Europe Standard Time"
+#  notification_settings {
+#    enabled = true
+#    email = "cthiemann@corp.comprodo.de"
+#    time_in_minutes = "60"
+#  }
+# }

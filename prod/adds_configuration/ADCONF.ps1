@@ -63,78 +63,83 @@ $initpassword = ConvertTo-SecureString -AsPlainText "My#Demo12345CT" -Force
 
 
 $homer = @{
+    Name = 'Homer Simpson'
     Givenname = 'Homer'
     Surname = 'Simpson'
     SamAccountName = 'homer'
     DisplayName = 'Homer Simpson'
-    UserPricipalName = 'homer@corp.comprodo.de'
+    UserPrincipalName = 'homer@corp.comprodo.de'
     Country = 'US'
     City = 'Springfield'
     Company = 'Springfield Nuclear Power Plant'
     Department = 'Security'
     EmailAddress = 'homer@corp.comprodo.de'
-    Path = 'OU=Users,OU=Simpsons,OU=Departemts,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
+    Path =  'OU=Users,OU=Simpsons,OU=Departments,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de' 
     AccountPassword = $initpassword
     Enabled = $true
 }
 New-ADUser @homer
 
 $bart = @{
+    Name = 'Bart Simpson'
     Givenname = 'Bart'
     Surname = 'Simpson'
     SamAccountName = 'bart'
     DisplayName = 'Bart Simpson'
-    UserPricipalName = 'bart@corp.comprodo.de'
+    UserPrincipalName = 'bart@corp.comprodo.de'
     Country = 'US'
     City = 'Springfield'
     EmailAddress = 'bart@corp.comprodo.de'
-    Path = 'OU=Users,OU=Simpsons,OU=Departemts,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
+    Path =  'OU=Users,OU=Simpsons,OU=Departments,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de' 
     AccountPassword = $initpassword
     Enabled = $true
 }
 New-ADUser @bart
 
 $lisa = @{
+    Name = 'Lisa Simpson'
     Givenname = 'Lisa'
     Surname = 'Simpson'
     SamAccountName = 'lisa'
     DisplayName = 'Lisa Simpson'
-    UserPricipalName = 'lisa@corp.comprodo.de'
+    UserPrincipalName = 'lisa@corp.comprodo.de'
     Country = 'US'
     City = 'Springfield'
     EmailAddress = 'lisa@corp.comprodo.de'
-    Path = 'OU=Users,OU=Simpsons,OU=Departemts,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
+    Path =  'OU=Users,OU=Simpsons,OU=Departments,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de' 
     AccountPassword = $initpassword
     Enabled = $true
 }
 New-ADUser @lisa
 
 $marge = @{
+    Name = 'Marge Simpson'
     Givenname = 'Marge'
     Surname = 'Simpson'
     SamAccountName = 'marge'
     DisplayName = 'Marge Simpson'
-    UserPricipalName = 'marge@corp.comprodo.de'
+    UserPrincipalName = 'marge@corp.comprodo.de'
     Country = 'US'
     City = 'Springfield'
     EmailAddress = 'marge@corp.comprodo.de'
-    Path = 'OU=Users,OU=Simpsons,OU=Departemts,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
+    Path =  'OU=Users,OU=Simpsons,OU=Departments,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
     AccountPassword = $initpassword
     Enabled = $true
 }
 New-ADUser @marge
 
 $maggie = @{
+    Name = 'Maggie Simpson'
     Givenname = 'Maggie'
     Surname = 'Simpson'
     SamAccountName = 'maggie'
     DisplayName = 'Maggie Simpson'
-    UserPricipalName = 'maggie@corp.comprodo.de'
+    UserPrincipalName = 'maggie@corp.comprodo.de'
     Country = 'US'
     City = 'Springfield'
     EmailAddress = 'bart@corp.comprodo.de'
-    Path = 'OU=Users,OU=Simpsons,OU=Departemts,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
+    Path =  'OU=Users,OU=Simpsons,OU=Departments,OU=SPRINGFIELD,DC=corp,DC=comprodo,DC=de'
     AccountPassword = $initpassword
     Enabled = $true
 }
-New-ADUser @bart
+New-ADUser @maggie

@@ -129,3 +129,31 @@ resource "azurerm_network_security_group" "nsg_sub_priv_ad_01_03" {
     destination_address_prefix = "*"
   }
 }
+resource "azurerm_network_security_group" "nsg_sub_pub_app_01_01" {
+  name                = "NSG-Sub_Pub_App_01_01"
+  location            = var.region
+  resource_group_name = azurerm_resource_group.rg_network.name
+
+  security_rule {
+    name                       = "BlockAllInbound"
+    priority                   = 899
+    direction                  = "Inbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+    security_rule {
+    name                       = "BlockAllOutbound"
+    priority                   = 898
+    direction                  = "Outbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}

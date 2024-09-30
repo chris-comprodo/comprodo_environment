@@ -31,17 +31,6 @@ variable "defaultWinServerVMSize" {
     description = "Default size for all Windows Server VMs"
 }
 
-variable "win_username" {
-  description = "Windows node username"
-  type        = string
-  sensitive   = false
-}
-
-variable "win_userpass" {
-  description = "Windows node password"
-  type        = string
-  sensitive   = true
-}
 
 ### Microsoft AD DS variables for Comprodo ###
 ##########################################

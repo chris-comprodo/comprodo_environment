@@ -89,3 +89,25 @@ resource "azurerm_virtual_network" "vnet_gateway_01" {
     Security_Zone = "Sec_Int_Public_Medium"
   }
 }
+### SIEM Private 01 ###
+# Network for security monitoring and SIEM solutions
+# Network for Microsoft Sentinel
+resource "azurerm_virtual_network" "vnet_priv_siem_01" {
+  name                = "VNET-Priv_SIEM_01"
+  address_space       = ["10.0.33.0/24"]
+  location            = var.region
+  resource_group_name = azurerm_resource_group.rg_network.name
+  tags = {
+    Security_Zone = "Sec_Int_Private_High"
+  }
+}
+resource "azurerm_subnet" "sub_priv_siem_01_01" {
+  name                 = "SUBNET-Priv_SIEM_01_01"
+  resource_group_name  = azurerm_resource_group.rg_network.name
+  virtual_network_name = azurerm_virtual_network.vnet_pub_app_01.name
+  address_prefixes     = ["10.0.33.0/28"]
+}
+resource "azurerm_subnet_network_security_group_association" "nsgjoin_sub_siem_01_01" {
+  subnet_id                 = azurerm_subnet.sub_priv_siem_01_01.id
+  network_security_group_id = azurerm_network_security_group.nsg_sub_priv_siem_01_01.id
+}

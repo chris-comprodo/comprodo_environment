@@ -39,7 +39,7 @@ resource "azurerm_subnet" "sub_ad_01_03" {
   address_prefixes     = ["10.0.10.32/28"]
 }
 resource "azurerm_subnet_network_security_group_association" "nsgjoin_sub_ad_01_03" {
-  subnet_id                 = azurerm_subnet.sub_ad_01_02.id
+  subnet_id                 = azurerm_subnet.sub_ad_01_03.id
   network_security_group_id = azurerm_network_security_group.nsg_sub_priv_ad_01_03.id
 }
 

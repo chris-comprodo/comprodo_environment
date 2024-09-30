@@ -15,7 +15,7 @@ variable "subscription" {
 
 variable "region" {
     type = string
-    description = "Select you main region for this deployment"
+    description = "Select your main region for this deployment"
     default = "East US"
 }
 

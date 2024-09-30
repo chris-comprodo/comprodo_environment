@@ -16,8 +16,8 @@ provider "azurerm" {
   tenant_id = var.tenant
 }
 
-resource "azurerm_resource_group" "rg-domain_controller" {
-  name     = "RG-Domain_Controller"
+resource "azurerm_resource_group" "rg_network" {
+  name     = var.rg-network
   location = var.region
    tags = {
     Environment = "Prod"

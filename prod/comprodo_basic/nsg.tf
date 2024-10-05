@@ -135,10 +135,10 @@ resource "azurerm_network_security_group" "nsg_sub_pub_app_01_01" {
   resource_group_name = azurerm_resource_group.rg_network.name
 
     security_rule {
-    name                       = "DenySSHInbound"
+    name                       = "AllowSSHInbound"
     priority                   = 150
     direction                  = "Inbound"
-    access                     = "Deny"
+    access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "22"
@@ -146,10 +146,10 @@ resource "azurerm_network_security_group" "nsg_sub_pub_app_01_01" {
     destination_address_prefix = "*"
   }
       security_rule {
-    name                       = "DenyCalderaHttpInbound"
+    name                       = "AllowCalderaHttpInbound"
     priority                   = 151
     direction                  = "Inbound"
-    access                     = "Deny"
+    access                     = "Allow"
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "8888"

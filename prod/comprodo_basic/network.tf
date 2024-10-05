@@ -104,7 +104,7 @@ resource "azurerm_virtual_network" "vnet_priv_siem_01" {
 resource "azurerm_subnet" "sub_priv_siem_01_01" {
   name                 = "SUBNET-Priv_SIEM_01_01"
   resource_group_name  = azurerm_resource_group.rg_network.name
-  virtual_network_name = azurerm_virtual_network.vnet_pub_app_01.name
+  virtual_network_name = azurerm_virtual_network.vnet_priv_siem_01.name
   address_prefixes     = ["10.0.33.0/28"]
 }
 resource "azurerm_subnet_network_security_group_association" "nsgjoin_sub_siem_01_01" {
